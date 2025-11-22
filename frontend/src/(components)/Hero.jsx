@@ -21,6 +21,10 @@ const slides = [
     image: "../../public/asset/sessionbg.jpg",
     text: "Through dance, we carry the pulse of our ancestors.",
   },
+  {
+    image: "../../src/assets/web.jpg",
+    text: "Through dance, we carry the pulse of our ancestors.",
+  },
 ];
 
 export default function Hero() {
@@ -34,7 +38,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-[70vh] overflow-hidden">
+    <section className="relative h-[90vh] md:h-[100vh] overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
@@ -42,7 +46,8 @@ export default function Hero() {
           backgroundImage: `url(${slides[index].image})`,
         }}
       >
-        <div className="absolute inset-0 bg-black/60" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50 md:bg-black/60" />{" "}
+        {/* Overlay */}
       </div>
 
       {/* Content */}
@@ -62,7 +67,7 @@ export default function Hero() {
       </div>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-4 flex justify-center w-full space-x-2 z-20">
+      <div className="absolute bottom-6 flex justify-center w-full space-x-2 z-20">
         {slides.map((_, i) => (
           <button
             key={i}
