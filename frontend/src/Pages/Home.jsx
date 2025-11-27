@@ -7,16 +7,19 @@ import CultureBody from "../(components)/culture";
 import StoryAnimation from "../(components)/animatedStory";
 
 export default function Home() {
-  const { data: stories, loading: storiesLoading } = useFetch("http://localhost:5000/api/stories?featured=true");
-  const { data: blogs, loading: blogsLoading } = useFetch("http://localhost:5000/api/blogs?limit=3");
-
+  const { data: stories, loading: storiesLoading } = useFetch(
+    "http://localhost:5000/api/stories?featured=true"
+  );
+  const { data: blogs, loading: blogsLoading } = useFetch(
+    "http://localhost:5000/api/blogs?limit=3"
+  );
   return (
     <>
       <Hero />
       <CultureBody />
       <StoryAnimation />
       <section className="container mx-auto px-6 py-12">
-        <h2 className="text-3xl font-heading mb-6 text-center">Featured Stories</h2>
+        <h2 className="text-3xl font-heading mb-6 text-center"></h2>
         {storiesLoading ? (
           <Loader />
         ) : (
@@ -29,7 +32,9 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto px-6 py-12 bg-primary/5">
-        <h2 className="text-3xl font-heading mb-6 text-center">Latest from the Blog</h2>
+        <h2 className="text-3xl font-heading mb-6 text-center">
+          Latest from the Blog
+        </h2>
         {blogsLoading ? (
           <Loader />
         ) : (

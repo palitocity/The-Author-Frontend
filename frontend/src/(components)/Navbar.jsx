@@ -1,9 +1,32 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/sankofaseek.png";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-primary text-accent shadow-md sticky top-0 z-50">
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white text-black shadow-md"
+          : "bg-primary text-accent shadow-md"
+      }`}
+    >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link
           to="/"
@@ -14,8 +37,6 @@ export default function Navbar() {
             alt="Sankofa Seek Logo"
             className="h-10 w-auto object-contain mr-3"
           />
-          {/* Optional text next to logo */}
-          {/* <span>Sankofa Seek</span> */}
         </Link>
 
         <ul className="flex space-x-6 font-body">
@@ -25,7 +46,7 @@ export default function Navbar() {
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-accent border-b-2 border-accent"
+                    ? "border-b-2 border-accent"
                     : "hover:text-accent transition"
                 }
               >
