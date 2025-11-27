@@ -6,7 +6,7 @@ const slides = [
     text: "Where every step echoes the rhythm of ancient footsteps.",
   },
   {
-    image: "../../public/asset/img1.jpg",
+    image: "../../public/asset/facesofken.jpg",
     text: "We remember in firelight — stories passed from soul to sky.",
   },
   {
