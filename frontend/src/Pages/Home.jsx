@@ -5,7 +5,7 @@ import BlogCard from "../(components)/BlogCard";
 import CultureBody from "../(components)/culture";
 import StoryAnimation from "../(components)/animatedStory";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Hero />
@@ -30,4 +30,6 @@ export default function Home() {
       </section>
     </>
   );
-}
+};
+
+export default Home;
