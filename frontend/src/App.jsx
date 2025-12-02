@@ -2,8 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
 
-
-import Home from "./pages/Home";
+import Home from "./Pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Marketplace from "./pages/Marketplace";
